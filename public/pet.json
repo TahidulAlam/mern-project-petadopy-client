@@ -1,0 +1,1281 @@
+[
+  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  },  {
+    "category": "Cat",
+    "name": "Whiskers",
+    "image": "https://i.ibb.co/tJ60q4N/cat.png",
+    "age": 3,
+    "location": "City A",
+    "description": "Friendly and playful cat, looking for a loving home.",
+    "adopted": false
+  },
+  {
+    "category": "Dog",
+    "name": "Buddy",
+    "image": "https://i.ibb.co/SPmwVSR/dog.png",
+    "age": 2,
+    "location": "City B",
+    "description": "Loyal and energetic dog, great with kids and other pets.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Fish",
+    "name": "Bubbles",
+    "image": "https://i.ibb.co/7Gpt5zz/fish.png",
+    "age": 0.5,
+    "location": "City D",
+    "description": "Colorful fish with a vibrant personality, suitable for aquariums.",
+    "adopted": true
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": false
+  },
+  {
+    "category": "Horse",
+    "name": "Spirit",
+    "image": "https://i.ibb.co/SJ5Kc3X/horse.png",
+    "age": 4,
+    "location": "City E",
+    "description": "Majestic horse, trained for riding and gentle with humans.",
+    "adopted": true
+  },
+  {
+    "category": "Bird",
+    "name": "Tweety",
+    "image": "https://i.ibb.co/g6nM4Dk/bird.png",
+    "age": 1.5,
+    "location": "City F",
+    "description": "Colorful and chatty bird, enjoys interacting with people.",
+    "adopted": false
+  },
+  {
+    "category": "Rabbit",
+    "name": "Cotton",
+    "image": "https://i.ibb.co/3ymqR0t/rabbit.png",
+    "age": 1,
+    "location": "City C",
+    "description": "Adorable and gentle rabbit, loves to hop around.",
+    "adopted": true
+  }
+]

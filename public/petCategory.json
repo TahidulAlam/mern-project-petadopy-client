@@ -1,0 +1,33 @@
+[
+    {
+      "category_name": "Cat",
+      "image_fill": "https://i.ibb.co/tJ60q4N/cat.png",
+      "image_draw": "https://i.ibb.co/DQNJNyq/cat1.png"
+    },
+    {
+      "category_name": "Dog",
+      "image_fill": "https://i.ibb.co/SPmwVSR/dog.png",
+      "image_draw": "https://i.ibb.co/3Cc971r/dog1.png"
+    },
+    {
+      "category_name": "Rabbit",
+      "image_fill": "https://i.ibb.co/PxqT2J8/rabbit1.png",
+      "image_draw": "https://i.ibb.co/PxqT2J8/rabbit1.png"
+    },
+    {
+      "category_name": "Fish",
+      "image_fill": "https://i.ibb.co/7Gpt5zz/fish.png",
+      "image_draw": "https://i.ibb.co/161rXh8/fish1.png"
+    },
+    {
+      "category_name": "Horse",
+      "image_fill": "https://i.ibb.co/SJ5Kc3X/horse.png",
+      "image_draw": "https://i.ibb.co/YtFfK7s/horse1.png"
+    },
+    {
+      "category_name": "Bird",
+      "image_fill": "https://i.ibb.co/g6nM4Dk/bird.png",
+      "image_draw": "https://i.ibb.co/52sFQ2L/bird1.png"
+    }
+  ]
+  
