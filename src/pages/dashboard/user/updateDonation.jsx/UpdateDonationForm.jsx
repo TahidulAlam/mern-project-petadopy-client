@@ -7,52 +7,50 @@ import useAuth from "../../../../hooks/useAuth";
 import { useFormik } from "formik";
 import moment from "moment";
 
-const image_hosting_key = import.meta.env.VITE_imageHosting;
-const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
-console.log(image_hosting_api);
 const UpdateDonationForm = ({ defaultData }) => {
   const axiosPublic = useAxiosPublic();
   const axiosPrivate = useAxiosPrivate();
   const { user } = useAuth();
   const email = user?.email;
   const [image, setImage] = useState(null);
-  const handleImage = async (e) => {
-    const file = e.target.files[0];
-    // console.log(file);
-    setImage(URL.createObjectURL(file));
+  const [url, setUrl] = useState("");
+  const [imageLink, setImageLink] = useState("");
+  const handleImage = async (selectedFile) => {
+    setImage(selectedFile);
+
+    const data = new FormData();
+    data.append("file", selectedFile);
+    data.append("upload_preset", "myCloud");
+    const cloudnaru_url =
+      "https://api.cloudinary.com/v1_1/dnan6s4xq/image/upload";
     try {
-      const formData = new FormData();
-      formData.append("file", file);
-      console.log(formData);
-      const response = await axiosPublic.post(image_hosting_api, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+      if (selectedFile === null) {
+        return alert("Please Upload an image");
+      }
+
+      const res = await fetch(cloudnaru_url, {
+        method: "POST",
+        body: data,
       });
 
-      console.log(response.data);
+      const cloudData = await res.json();
+      console.log(cloudData);
+      setUrl(cloudData.url);
+      const updatedImageLink = { ...imageLink, url: cloudData.url };
+      setImageLink(updatedImageLink);
     } catch (error) {
-      console.error("Error uploading image:", error.response.data);
+      console.error("Error uploading image:", error.message);
     }
   };
-  const {
-    _id,
-    email: updateEmail,
-    name,
-    amount,
-    last_date,
-    shortDescription,
-    longDescription,
-  } = defaultData || {};
   const formik = useFormik({
     initialValues: {
-      email: updateEmail || "not fined",
-      name: name,
-      amount: amount,
-      image: image,
-      last_date: last_date,
-      shortDescription: shortDescription,
-      longDescription: longDescription,
+      email: defaultData.updateEmail || "not fined",
+      name: defaultData.name,
+      amount: defaultData.amount,
+      image: defaultData.image,
+      last_date: defaultData.last_date,
+      shortDescription: defaultData.shortDescription,
+      longDescription: defaultData.longDescription,
       file: null,
       campaignPause: false,
       dateField: moment().format("YYYY-MM-DD"),
@@ -60,39 +58,24 @@ const UpdateDonationForm = ({ defaultData }) => {
     onSubmit: async (values, actions) => {
       console.log(values);
       actions.setSubmitting(false);
-      // const formData = new FormData();
-      // formData.append("file", values.file);
-      // const res = await axiosPublic.post(image_hosting_api, formData, {
-      //   headers: {
-      //     "content-type": "multipart/form-data",
-      //   },
-      // });
-      // console.log(res);
+
       const Res = await axiosPrivate.patch(
         `/api/allDonationCamp/${defaultData._id}`,
         values
       );
       console.log(Res);
-      //   try {
-      //   } catch (error) {
-      //     console.error("Error submitting form:", error);
-      //   } finally {
-
-      //   }
     },
   });
-  // console.log(moment().format());
+  console.log(defaultData);
   return (
     <div>
       <div>
         <label htmlFor="file">File:</label>
-        <img className="w-32" src={image} />
         <input
           type="file"
           id="file"
           name="file"
-          //   value={image}
-          onChange={(e) => handleImage(e)}
+          onChange={(e) => handleImage(e.target.files[0])}
           className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
         />
         {/* {formik.errors.file && <div>{formik.errors.file}</div>} */}

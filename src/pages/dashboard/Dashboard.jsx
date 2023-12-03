@@ -1,10 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { CgMenuLeftAlt, CgClose } from "react-icons/cg";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-
+import useAdmin from "../../hooks/useAdmin";
+import DashBoardHeader from "../../components/headers/DashBoardHeader";
+import { FaSignOutAlt } from "react-icons/fa";
 const Dashboard = () => {
+  const [isAdmin] = useAdmin();
+  const location = useLocation();
   const [showSidebar, setShowSidebar] = useState(
     window.innerWidth > 768 // Set initial state based on screen size
   );
@@ -42,7 +46,7 @@ const Dashboard = () => {
   const closeSidebar = () => {
     setShowSidebar(false);
   };
-  const isAdmin = true;
+  // const isAdmin = true;
   return (
     <div className="lg:grid lg:grid-cols-12 grid-cols-none">
       <div className="lg:col-span-2">
@@ -76,9 +80,9 @@ const Dashboard = () => {
               <div className="px-2 md:px-0 lg:py-6 py-3 space-y-2 md:space-y-0 md:space-x-2 lg:text-xl text-base font-medium text-black flex flex-col justify-between items-start">
                 <ul className=" rounded-md text-black focus:outline-none focus:text-black focus:bg-gray-700 whitespace-nowrap  text-start">
                   {/* Sidebar content here */}
-                  <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
+                  {/* <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
                     <NavLink to={"userHome"}>User Home</NavLink>
-                  </li>
+                  </li> */}
                   <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
                     <NavLink to={"addPet"}>Add Pet</NavLink>
                   </li>
@@ -96,14 +100,17 @@ const Dashboard = () => {
                       My Donation Campaign
                     </NavLink>
                   </li>
+                  <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
+                    <NavLink to={"myDonation"}>My Donation</NavLink>
+                  </li>
 
                   <br className="text-black w-full bg-black" />
 
                   {isAdmin ? (
                     <>
-                      <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
+                      {/* <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
                         <NavLink to={"adminHome"}>Admin Home</NavLink>
-                      </li>
+                      </li> */}
                       <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
                         <NavLink to={"allUsers"}>All Users</NavLink>
                       </li>
@@ -153,8 +160,11 @@ const Dashboard = () => {
                 >
                   Donation
                 </NavLink>
-                <button className="btn" onClick={() => logOut()}>
-                  Sign Out
+                <button
+                  className="btn flex justify-center items-center gap-5 bg-red-500 rounded-lg px-3 py-2"
+                  onClick={() => logOut()}
+                >
+                  Sign Out <FaSignOutAlt />
                 </button>
               </div>
             </div>
@@ -163,6 +173,10 @@ const Dashboard = () => {
       </div>
 
       <main className="lg:col-span-10">
+        {location.pathname === "/dashboard" && (
+          <DashBoardHeader content={<h1>Dashboard</h1>} />
+        )}
+
         <Outlet></Outlet>
       </main>
     </div>

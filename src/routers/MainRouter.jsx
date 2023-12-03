@@ -24,28 +24,32 @@ import DonationDetails from "../pages/donationDetails/DonationDetails";
 import UpdateDonation from "../pages/dashboard/user/updateDonation.jsx/UpdateDonation";
 import AllPets from "../pages/dashboard/admin/allPets/AllPets";
 import AllDonation from "../pages/dashboard/admin/allDonations/AllDonation";
+import ErrorPage from "../components/error/ErrorPage";
+import AdminRoute from "./AdminRoute";
+import MyDonation from "../pages/dashboard/user/myDonation/MyDonation";
 
 const MainRouter = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home></Home>,
       },
       {
         path: "/petlisting",
         // element: <PetListing></PetListing>,
-        element: (
-          <PrivateRoute>
-            <PetListNew></PetListNew>,
-          </PrivateRoute>
-        ),
+        element: <PetListNew></PetListNew>,
       },
       {
         path: "/petlisting/:id",
-        element: <PetDetails></PetDetails>,
+        element: (
+          <PrivateRoute>
+            <PetDetails></PetDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/api/petList/${params.id}`),
       },
@@ -55,11 +59,15 @@ const MainRouter = createBrowserRouter([
       },
       {
         path: "/donation/:id",
-        element: <DonationDetails></DonationDetails>,
+        element: (
+          <PrivateRoute>
+            <DonationDetails></DonationDetails>,
+          </PrivateRoute>
+        ),
         loader: async ({ params }) => {
           try {
             const response = await fetch(
-              `http://localhost:5000/api/DonationCamp/${params.id}`
+              `http://localhost:5000/api/allDonationCamp/${params.id}`
             );
             const data = await response.json();
             return data;
@@ -80,38 +88,75 @@ const MainRouter = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRoute>
+        <Dashboard />,
+      </PrivateRoute>
+    ),
     children: [
       // Admin Route
       {
         path: "allUsers",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>,
+          </AdminRoute>
+        ),
       },
       {
         path: "allPets",
-        element: <AllPets></AllPets>,
+        element: (
+          <AdminRoute>
+            <AllPets></AllPets>,
+          </AdminRoute>
+        ),
       },
       {
         path: "allDonations",
-        element: <AllDonation></AllDonation>,
+        element: (
+          <AdminRoute>
+            <AllDonation></AllDonation>,
+          </AdminRoute>
+        ),
       },
 
       //User Route
       {
-        path: "userHome",
-        element: <UserHome></UserHome>,
+        // path: "userHome",
+        index: true,
+        element: (
+          <PrivateRoute>
+            <UserHome></UserHome>,
+          </PrivateRoute>
+        ),
       },
       {
         path: "addPet",
-        element: <AddPet></AddPet>,
+        element: (
+          <PrivateRoute>
+            <AddPet></AddPet>,
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "myDonation",
+        element: <MyDonation></MyDonation>,
       },
       {
         path: "CreateDonation",
-        element: <CreateDonation></CreateDonation>,
+        element: (
+          <PrivateRoute>
+            <CreateDonation></CreateDonation>,
+          </PrivateRoute>
+        ),
       },
       {
         path: "updatePet/:id",
-        element: <UpdatePet></UpdatePet>,
+        element: (
+          <PrivateRoute>
+            <UpdatePet></UpdatePet>,
+          </PrivateRoute>
+        ),
         loader: async ({ params }) => {
           const Data = await fetch(
             `http://localhost:5000/api/myAddPet/${params.id}`
@@ -121,15 +166,27 @@ const MainRouter = createBrowserRouter([
       },
       {
         path: "adoptionReq",
-        element: <AdoptionReq></AdoptionReq>,
+        element: (
+          <PrivateRoute>
+            <AdoptionReq></AdoptionReq>,
+          </PrivateRoute>
+        ),
       },
       {
         path: "myAddPet",
-        element: <MyAddPet></MyAddPet>,
+        element: (
+          <PrivateRoute>
+            <MyAddPet></MyAddPet>,
+          </PrivateRoute>
+        ),
       },
       {
         path: "updateDonation/:id",
-        element: <UpdateDonation></UpdateDonation>,
+        element: (
+          <PrivateRoute>
+            <UpdateDonation></UpdateDonation>,
+          </PrivateRoute>
+        ),
         loader: async ({ params }) => {
           try {
             const response = await fetch(
@@ -144,7 +201,11 @@ const MainRouter = createBrowserRouter([
       },
       {
         path: "myDonationCamp",
-        element: <MyDonationCamp></MyDonationCamp>,
+        element: (
+          <PrivateRoute>
+            <MyDonationCamp></MyDonationCamp>
+          </PrivateRoute>
+        ),
       },
     ],
   },

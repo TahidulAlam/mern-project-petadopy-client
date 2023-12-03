@@ -88,7 +88,7 @@ const AdoptionReq = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!", // Corrected parameter name
+      confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
         axiosPrivate.delete(`/api/adopt/${id}`).then((res) => {
@@ -118,11 +118,12 @@ const AdoptionReq = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!", // Corrected parameter name
+      confirmButtonText: "Yes, accept it!", // Corrected parameter name
     }).then((result) => {
       if (result.isConfirmed) {
         axiosPrivate.patch(`/api/adopt/${id}`).then((res) => {
-          if (res.data.deletedCount > 0) {
+          console.log(res);
+          if (res.data.modifiedCount > 0) {
             refetch();
             Swal.fire({
               title: "Accepted!",
@@ -140,6 +141,7 @@ const AdoptionReq = () => {
       }
     });
   };
+  console.log(adopRequest);
   return (
     <div>
       <Container>

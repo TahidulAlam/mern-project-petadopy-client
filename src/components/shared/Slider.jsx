@@ -8,7 +8,8 @@ import useCategory from "../../hooks/useCategory";
 
 const Slider = () => {
   const categoryData = useCategory();
-  const data = categoryData?.categoryData;
+  const data = categoryData?.categoryData?.result;
+  // console.log(data);
   return (
     <Splide
       options={{

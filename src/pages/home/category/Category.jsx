@@ -2,15 +2,17 @@
 import React from "react";
 import useCategory from "../../../hooks/useCategory";
 import CategoryCard from "./CategoryCard";
+import DashBoardHeader from "../../../components/headers/DashBoardHeader";
+import Container from "../../../components/shared/Container";
 
 const Category = () => {
   const categoryData = useCategory();
-  const data = categoryData?.categoryData;
+  // const data = categoryData?.categoryData;
+  const data = categoryData?.categoryData?.result;
+  // console.log(data);
   return (
     <div>
-      {" "}
-      <h1 className="text-center text-xl">This is category section</h1>
-      <div className="grid grid-cols-3 gap-5 mt-5">
+      <div className="grid lg:grid-cols-3 grid-cols-2 gap-5 mt-5">
         {data?.map((dd) => (
           <CategoryCard key={dd._id} cardData={dd}></CategoryCard>
         ))}

@@ -1,11 +1,26 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { Fragment, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Container from "../../components/shared/Container";
-
+import { Dialog, Transition } from "@headlessui/react";
+// import { Formik, Field, Form, ErrorMessage } from "formik";
+import Donate from "./Donate/Donate";
 const DonationDetails = () => {
   const data = useLoaderData();
-  console.log("data ache?", data);
+  let [isOpen, setIsOpen] = useState(false);
+  const [amount, setAmount] = useState(null);
+  function closeModal() {
+    setIsOpen(false);
+  }
+  function openModal() {
+    setIsOpen(true);
+  }
+  const min = 1;
+  const max = data.amount;
+  const handleChange = (event) => {
+    const value = Math.max(min, Math.min(max, Number(event.target.value)));
+    setAmount(value);
+  };
   return (
     <div>
       <Container>
@@ -20,16 +35,19 @@ const DonationDetails = () => {
                 <h1 className="lg:text-3xl text-lg font-bold">
                   {data.description}
                 </h1>
+                <h1 className="lg:text-3xl text-lg font-bold">
+                  maximum Donation Amount :{data.amount}
+                </h1>
                 <p>Short Description: {data.shortDescription}</p>
                 <p>Short Description: {data.longDescription}</p>
-                {/* <div>
+                <div>
                   <div className="flex lg:justify-start justify-center">
                     <button
                       type="button"
                       onClick={openModal}
                       className="rounded-md bg-indigo-700 px-10 py-2 text-lg font-medium text-white "
                     >
-                      Adopt
+                      Donate
                     </button>
                   </div>
                   <div className="mt-14 lg:mt-0">
@@ -74,108 +92,51 @@ const DonationDetails = () => {
                                   <p className="text-gray-600 mt-6">
                                     {data.description}
                                   </p>
-                                  <Formik
-                                    initialValues={initialValues}
-                                    onSubmit={handleSubmit}
+                                  <form>
+                                    <div className="mt-8 ">
+                                      <div className="p-5">
+                                        <label
+                                          htmlFor="donate_amount"
+                                          className="text-sm text-gray-700 block mb-1 font-medium"
+                                        >
+                                          Donate Amount :
+                                        </label>
+                                        <input
+                                          type="number"
+                                          // min="1"
+                                          // max="10"
+                                          onChange={handleChange}
+                                          value={amount}
+                                          // onChange={(e) =>
+                                          //   setAmount(e.target.value)
+                                          // }
+
+                                          name="donate_amount"
+                                          id="number"
+                                          className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
+                                          placeholder="Enter your Amount"
+                                        />
+                                      </div>
+                                    </div>
+                                  </form>
+                                  <div className="p-5">
+                                    {!data.campaignPause ? (
+                                      <Donate
+                                        Amountdata={amount}
+                                        campData={data}
+                                      />
+                                    ) : (
+                                      "Donation Campaign is Now Paused"
+                                    )}
+                                  </div>
+                                  <button
+                                    type="button"
+                                    className="inline-flex justify-center rounded-md border border-transparent bg-blue-800 px-4 py-2 text-sm font-medium text-blue-100
+                                        hover:text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                    onClick={closeModal}
                                   >
-                                    <Form>
-                                      <div className="mt-8 grid lg:grid-cols-2 gap-4">
-                                        <div>
-                                          <label
-                                            htmlFor="name"
-                                            className="text-sm text-gray-700 block mb-1 font-medium"
-                                          >
-                                            Name
-                                          </label>
-                                          <Field
-                                            type="text"
-                                            name="user_name"
-                                            id="name"
-                                            className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
-                                            placeholder="Enter your name"
-                                            readOnly
-                                          />
-                                        </div>
-
-                                        <div>
-                                          <label
-                                            htmlFor="email"
-                                            className="text-sm text-gray-700 block mb-1 font-medium"
-                                          >
-                                            Email Address
-                                          </label>
-                                          <Field
-                                            type="text"
-                                            name="user_email"
-                                            id="email"
-                                            className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
-                                            placeholder="yourmail@provider.com"
-                                            readOnly
-                                          />
-                                        </div>
-
-                                        <div>
-                                          <label
-                                            htmlFor="number"
-                                            className="text-sm text-gray-700 block mb-1 font-medium"
-                                          >
-                                            Phone Number
-                                          </label>
-                                          <Field
-                                            type="number"
-                                            name="user_number"
-                                            id="number"
-                                            className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
-                                            placeholder="your number"
-                                          />
-                                          <ErrorMessage
-                                            name="user_number"
-                                            component="div"
-                                            className="text-red-500"
-                                          />
-                                        </div>
-
-                                        <div>
-                                          <label
-                                            htmlFor="address"
-                                            className="text-sm text-gray-700 block mb-1 font-medium"
-                                          >
-                                            Address
-                                          </label>
-                                          <Field
-                                            type="text"
-                                            name="user_address"
-                                            id="address"
-                                            className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
-                                            placeholder="your address"
-                                          />
-                                          <ErrorMessage
-                                            name="address"
-                                            component="div"
-                                            className="text-red-500"
-                                          />
-                                        </div>
-                                      </div>
-
-                                      <div className="space-x-4 mt-8">
-                                        <button
-                                          type="submit"
-                                          className="inline-flex justify-center rounded-md border border-transparent bg-blue-800 px-4 py-2 text-sm font-medium text-blue-100
-                                        hover:text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                        >
-                                          Save
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className="inline-flex justify-center rounded-md border border-transparent bg-blue-800 px-4 py-2 text-sm font-medium text-blue-100
-                                        hover:text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                          onClick={closeModal}
-                                        >
-                                          Cancel
-                                        </button>
-                                      </div>
-                                    </Form>
-                                  </Formik>
+                                    Cancel
+                                  </button>
                                 </div>
                               </Dialog.Panel>
                             </Transition.Child>
@@ -184,7 +145,7 @@ const DonationDetails = () => {
                       </Dialog>
                     </Transition>
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>

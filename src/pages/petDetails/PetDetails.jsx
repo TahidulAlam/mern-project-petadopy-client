@@ -36,14 +36,14 @@ const PetDetails = () => {
     location,
     image,
     email,
-    // petId: data._id,
+    petIds: data._id,
     user_name: user?.displayName,
     user_email: user?.email,
     // user_number: "",
     // user_address: "",
   };
   const handleSubmit = async (values, actions) => {
-    console.log(values);
+    // console.log(values);
     actions.setSubmitting(false);
     const adoptRes = await axiosPrivate.post("/api/adopt", values);
     console.log(adoptRes);

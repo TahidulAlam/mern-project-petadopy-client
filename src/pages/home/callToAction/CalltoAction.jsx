@@ -6,8 +6,6 @@ import logoB from "../../../assets/petadopyWhite.png";
 const CalltoAction = () => {
   return (
     <div className="-z-10">
-      {" "}
-      <h1 className="text-center text-xl">This is Call to Action section</h1>
       <Parallax
         className="rounded-lg"
         blur={{ min: -15, max: 15 }}

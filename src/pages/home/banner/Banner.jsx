@@ -8,7 +8,7 @@ const Banner = () => {
     <div>
       <div className="relative -z-10">
         <img src={banner} className="max-w-full h-auto" alt="" />
-        <div className="absolute right-0 top-0 bottom-0 w-1/2 mt-20">
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 lg:mt-20 mt-10 ">
           <Slider />
         </div>
       </div>

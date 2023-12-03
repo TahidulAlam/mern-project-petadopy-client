@@ -8,31 +8,40 @@ import useAuth from "../../../../hooks/useAuth";
 import moment from "moment";
 import { useFormik } from "formik";
 import Swal from "sweetalert2";
-const image_hosting_key = import.meta.env.VITE_imageHosting;
-const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
-// console.log(image_hosting_api);
+
 const MyFormUpdate = ({ defautltDd }) => {
   const axiosPublic = useAxiosPublic();
   const axiosPrivate = useAxiosPrivate();
   const { user } = useAuth();
   const email = user?.email;
   const [image, setImage] = useState(null);
-  const handleImage = async (e) => {
-    const file = e.target.files[0];
-    setImage(URL.createObjectURL(file));
+  const [url, setUrl] = useState("");
+  const [imageLink, setImageLink] = useState("");
+  const handleImage = async (selectedFile) => {
+    setImage(selectedFile);
+
+    const data = new FormData();
+    data.append("file", selectedFile);
+    data.append("upload_preset", "myCloud");
+    const cloudnaru_url =
+      "https://api.cloudinary.com/v1_1/dnan6s4xq/image/upload";
     try {
-      const formData = new FormData();
-      formData.append("file", file);
-      console.log(formData);
-      const response = await axiosPublic.post(image_hosting_api, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+      if (selectedFile === null) {
+        return alert("Please Upload an image");
+      }
+
+      const res = await fetch(cloudnaru_url, {
+        method: "POST",
+        body: data,
       });
 
-      console.log(response.data);
+      const cloudData = await res.json();
+      console.log(cloudData);
+      setUrl(cloudData.url);
+      const updatedImageLink = { ...imageLink, url: cloudData.url };
+      setImageLink(updatedImageLink);
     } catch (error) {
-      console.error("Error uploading image:", error.response.data);
+      console.error("Error uploading image:", error.message);
     }
   };
   const {
@@ -40,7 +49,7 @@ const MyFormUpdate = ({ defautltDd }) => {
     age,
     category,
     email: updateEmail,
-    image: updateImage,
+    image_url: updateImage,
     location,
     longDescription,
     name,
@@ -50,7 +59,7 @@ const MyFormUpdate = ({ defautltDd }) => {
     initialValues: {
       email: updateEmail || "not fined",
       name: name,
-      image: updateImage,
+      image_url: updateImage,
       age: age,
       category: category,
       location: location,
@@ -101,12 +110,11 @@ const MyFormUpdate = ({ defautltDd }) => {
     <div>
       <div>
         <label htmlFor="file">File:</label>
-        <img className="w-32" src={image} />
         <input
           type="file"
           id="file"
           name="file"
-          onChange={(e) => handleImage(e)}
+          onChange={(e) => handleImage(e.target.files[0])}
           className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
         />
         {/* {formik.errors.file && <div>{formik.errors.file}</div>} */}

@@ -2,10 +2,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useFormik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Social from "../../components/socialAuth/Social";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 const validate = (values) => {
   const errors = {};
 
@@ -23,9 +24,11 @@ const validate = (values) => {
 
   return errors;
 };
-
+// myAdm1nMain@mail.com
+// Admin111@mail.com
 const Registration = () => {
   const { createUser, updateUser } = useAuth();
+  const axiosUser = useAxiosPublic();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -37,24 +40,25 @@ const Registration = () => {
       const name = values.name;
       const email = values.email;
       const password = values.password;
-      // console.log(email, password);
+      const userInfo = {
+        name,
+        email,
+      };
       createUser(email, password).then((res) => {
-        // console.log(res);
-        updateUser(name).then((res) => {
-          console.log(res);
+        updateUser(name).then(() => {
+          axiosUser.post("/api/users", userInfo);
+          Swal.fire({
+            title: "Registration Successful.",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
         });
-        // Swal.fire({
-        //   title: "Registration Successful.",
-        //   showClass: {
-        //     popup: "animate__animated animate__fadeInDown",
-        //   },
-        //   hideClass: {
-        //     popup: "animate__animated animate__fadeOutUp",
-        //   },
-        // });
+        navigate(location.state ? location.state : "/");
       });
-      // alert(JSON.stringify(values, null, 2));
-      // console.log(values);
     },
   });
 

@@ -2,7 +2,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import Social from "../../components/socialAuth/Social";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
@@ -27,6 +27,8 @@ const validate = (values) => {
 const Login = () => {
   const { user, signIn } = useAuth();
   const axiosUser = useAxiosPublic();
+  const location = useLocation();
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -44,15 +46,16 @@ const Login = () => {
         console.log(result);
         try {
           axiosUser.post("/api/users", userInfo);
-          // Swal.fire({
-          //   title: "User Login Successful.",
-          //   showClass: {
-          //     popup: "animate__animated animate__fadeInDown",
-          //   },
-          //   hideClass: {
-          //     popup: "animate__animated animate__fadeOutUp",
-          //   },
-          // });
+          Swal.fire({
+            title: "User Login Successful.",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
+          navigate(location.state ? location.state : "/");
         } catch (error) {
           console.log(error);
         }

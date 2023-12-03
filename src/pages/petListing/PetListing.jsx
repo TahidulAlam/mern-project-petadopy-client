@@ -69,6 +69,7 @@ const PetListing = () => {
   useEffect(() => {
     setSearchData(petData);
   }, [petData]);
+  console.log(petData);
   return (
     <div>
       <Container>
