@@ -17,27 +17,17 @@ const PetListing = () => {
   const [category, setCategory] = useState("All");
   const [searchData, setSearchData] = useState();
   const axios = useAxiosPublic();
-  // const keywordRef = useRef(null);
   const formRef = useRef(null);
   const getData = async (page = 1) => {
-    // if (!keyword && category === "All") {
     if (category === "All") {
       const url = `/api/petList`;
       const { data } = await axios.get(url);
       return data.products;
     } else {
-      // const url = `/api/petList?search=${keyword}&category=${category}`;
       const url = `/api/petList?category=${category}&page=${page}`;
       const { data } = await axios.get(url);
       return data.products;
     }
-    // let url;
-
-    // if (category === "All") {
-    //   url = `/api/petList?page=${page}`;
-    // } else {
-    //   url = `/api/petList?category=${category}&page=${page}`;
-    // }
   };
 
   const query = {
@@ -65,16 +55,14 @@ const PetListing = () => {
       setSearchData(petData);
     }
   };
-  console.log(petData);
   useEffect(() => {
     setSearchData(petData);
   }, [petData]);
-  console.log(petData);
   return (
     <div>
       <Container>
         <div className="fixed top-0 left-0 right-0 z-10">
-          <div className="rounded-b-xl lg:mt-5 mt-1 max-w-xl mx-auto px-5 py-4 bg-[#6D28D9]">
+          <div className="rounded-xl lg:mt-3 mt-1 max-w-xl mx-auto px-5 py-4 bg-[#6D28D9]">
             <div className="relative">
               <form
                 // ref={formRef}
@@ -128,11 +116,11 @@ const PetListing = () => {
         <div className="lg:mt-44 -z-30">
           <div className="grid grid-cols-3 gap-5 w-5/6 mx-auto ">
             {searchData
-              ? searchData?.map((dd) => (
-                  <PetListingCard key={dd._id} data={dd}></PetListingCard>
+              ? searchData?.map((dd, index) => (
+                  <PetListingCard key={index} data={dd}></PetListingCard>
                 ))
-              : petData?.map((dd) => (
-                  <PetListingCard key={dd._id} data={dd}></PetListingCard>
+              : petData?.map((dd, index) => (
+                  <PetListingCard key={index} data={dd}></PetListingCard>
                 ))}
           </div>
         </div>

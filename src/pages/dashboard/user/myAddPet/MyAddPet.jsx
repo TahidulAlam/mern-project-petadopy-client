@@ -106,7 +106,6 @@ const MyAddPet = () => {
       }
     });
   };
-  console.log(myAddPetdata);
   return (
     <div>
       <DashBoardHeader content={<h1>My Add Pet</h1>} />

@@ -11,7 +11,7 @@ const useAdmin = () => {
     queryKey: [user?.email, "isAdmin"],
     enabled: !loading,
     queryFn: async () => {
-      const res = await Axios.get(`/api/users/${user.email}`);
+      const res = await Axios.get(`/api/users/${user?.email}`);
       return res.data.admin;
     },
   });

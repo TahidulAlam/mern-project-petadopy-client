@@ -19,25 +19,22 @@ const columnHelper = createColumnHelper();
 
 const columns = [
   columnHelper.accessor("name", {
-    header: "Pet name",
+    header: "Name",
   }),
-  columnHelper.accessor("category", {
-    header: "Pet Category",
+  columnHelper.accessor("email", {
+    header: "Email",
   }),
-  columnHelper.accessor("image", {
-    header: "Pet Image",
+  columnHelper.accessor("number", {
+    header: "Number",
   }),
-  columnHelper.accessor("adopted_status", {
-    header: "Adoption Status",
+  columnHelper.accessor("Address", {
+    header: "Address",
   }),
-  columnHelper.accessor("update", {
-    header: "Update",
+  columnHelper.accessor("accept", {
+    header: "Accept",
   }),
-  columnHelper.accessor("delete", {
-    header: "Delete",
-  }),
-  columnHelper.accessor("adopted", {
-    header: "Adopted",
+  columnHelper.accessor("reject", {
+    header: "Reject",
   }),
 ];
 const AdoptionReq = () => {
@@ -173,13 +170,11 @@ const AdoptionReq = () => {
                       <tbody className="text-sm divide-y divide-gray-100">
                         {adopRequest?.map((dd, index) => (
                           <tr key={dd._id}>
-                            <td className="p-4">{index + 1}</td>
-                            <td className="p-4">{dd.name}</td>
-                            <td className="p-4">{dd.category}</td>
-                            <td className="p-4">{dd.image}</td>
-                            <td className="p-4">
-                              {!dd.adopted ? "Not Adopted" : ""}
-                            </td>
+                            {/* <td className="p-4">{index + 1}</td> */}
+                            <td className="p-4">{dd.user_name}</td>
+                            <td className="p-4">{dd.user_email}</td>
+                            <td className="p-4">{dd.user_number}</td>
+                            <td className="p-4">{dd.user_address}</td>
                             <td className="p-4">
                               <button
                                 onClick={() => handleAccept(dd._id)}

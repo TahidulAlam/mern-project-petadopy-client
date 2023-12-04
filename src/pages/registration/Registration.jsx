@@ -57,7 +57,7 @@ const Registration = () => {
             },
           });
         });
-        navigate(location.state ? location.state : "/");
+        navigate("/");
       });
     },
   });

@@ -75,7 +75,6 @@ const MyFormUpdate = ({ defautltDd }) => {
       try {
         const Res = await axiosPublic.patch(`/api/petList/${_id}`, values);
         if (Res.data.modifiedCount) {
-          // reset();
           Swal.fire({
             position: "top-end",
             icon: "success",

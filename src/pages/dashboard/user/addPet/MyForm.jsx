@@ -8,6 +8,7 @@ import useAxiosPrivate from "../../../../hooks/useAxiosPrivate";
 import useAuth from "../../../../hooks/useAuth";
 import moment from "moment";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const MyForm = () => {
   const axiosPublic = useAxiosPublic();
@@ -62,11 +63,17 @@ const MyForm = () => {
       dateField: moment().format("YYYY-MM-DD"),
     },
     onSubmit: async (values, actions) => {
-      console.log(values);
       actions.setSubmitting(false);
-
-      const Res = await axiosPrivate.post("/api/petList", values);
-      console.log(Res);
+      // acknowledged
+      const res = await axiosPrivate.post("/api/petList", values);
+      console.log(res);
+      if (res.data.acknowledged) {
+        Swal.fire({
+          title: "Pet added!",
+          text: "Pet added Successfully.",
+          icon: "success",
+        });
+      }
     },
   });
 

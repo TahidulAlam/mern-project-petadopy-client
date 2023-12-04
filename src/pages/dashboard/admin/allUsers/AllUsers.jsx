@@ -102,7 +102,7 @@ const AllUsers = () => {
                           <td className="">{user.name}</td>
                           <td className="p-2 whitespace-nowrap">
                             <div className="text-left">
-                              {user.email || "name"}
+                              {user?.email || "name"}
                             </div>
                           </td>
                           <td className="p-2 whitespace-nowrap">

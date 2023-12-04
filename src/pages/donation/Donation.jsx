@@ -44,7 +44,6 @@ const Donation = () => {
   console.log("donate", donation);
   return (
     <div>
-      <h1 className="text-xl font-bold">this is Donation page</h1>
       <Container>
         <div className="lg:mt-56 mt-32 -z-30">
           <div className="grid lg:grid-cols-3 grid-col gap-5 w-5/6 mx-auto ">

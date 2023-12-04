@@ -47,7 +47,7 @@ const DonateForm = ({ Amountdata, campData }) => {
         payment_method: {
           card: card,
           billing_details: {
-            email: user.email || "annonymus",
+            email: user?.email || "annonymus",
             name: user.displayName || "annonymus",
           },
         },
@@ -63,7 +63,7 @@ const DonateForm = ({ Amountdata, campData }) => {
         setTransectionId(paymentIntent.id);
         const donateDetails = {
           name: user.displayName,
-          email: user.email,
+          email: user?.email,
           Amount: Amountdata,
           data: new Date(),
           transectionId: paymentIntent.id,

@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import DashBoardHeader from "../../../../components/headers/DashBoardHeader";
 
 const UserHome = () => {
   return (
     <div>
-      <h1>This is user Home</h1>
+      <DashBoardHeader content={<h1>User Dashboard</h1>}></DashBoardHeader>
     </div>
   );
 };

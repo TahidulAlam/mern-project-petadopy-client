@@ -47,6 +47,7 @@ const Dashboard = () => {
     setShowSidebar(false);
   };
   // const isAdmin = true;
+  console.log(isAdmin);
   return (
     <div className="lg:grid lg:grid-cols-12 grid-cols-none">
       <div className="lg:col-span-2">
@@ -108,9 +109,6 @@ const Dashboard = () => {
 
                   {isAdmin ? (
                     <>
-                      {/* <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
-                        <NavLink to={"adminHome"}>Admin Home</NavLink>
-                      </li> */}
                       <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
                         <NavLink to={"allUsers"}>All Users</NavLink>
                       </li>
@@ -124,23 +122,18 @@ const Dashboard = () => {
                   ) : (
                     " "
                   )}
+
                   {/* <>
-              <li>
-                <NavLink to={"adminHome"}>Admin Home</NavLink>
-              </li>
-              <li>
-                <NavLink to={"addItems"}>Add Items</NavLink>
-              </li>
-              <li>
-                <NavLink to={"manageItems"}>Manage Items</NavLink>
-              </li>
-              <li>
-                <NavLink to={"manageBookings"}>Manage Bookings</NavLink>
-              </li>
-              <li>
-                <NavLink to={"allUsers"}>All Users</NavLink>
-              </li>
-            </> */}
+                  <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
+                    <NavLink to={"allUsers"}>All Users</NavLink>
+                  </li>
+                  <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
+                    <NavLink to={"allPets"}>All Pets</NavLink>
+                  </li>
+                  <li className="py-1 px-2 hover:bg-slate-300 rounded-lg">
+                    <NavLink to={"allDonations"}>All Donations</NavLink>
+                  </li>
+                  </> */}
                 </ul>
                 <NavLink
                   to={"/"}

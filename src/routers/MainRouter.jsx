@@ -51,7 +51,8 @@ const MainRouter = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/api/petList/${params.id}`),
+          fetch(`https://petadopy-backend.vercel.app/api/petList/${params.id}`),
+        // fetch(`http://localhost:5000/api/petList/${params.id}`),
       },
       {
         path: "/donation",
@@ -67,7 +68,8 @@ const MainRouter = createBrowserRouter([
         loader: async ({ params }) => {
           try {
             const response = await fetch(
-              `http://localhost:5000/api/allDonationCamp/${params.id}`
+              `https://petadopy-backend.vercel.app/api/allDonationCamp/${params.id}`
+              // `http://localhost:5000/api/allDonationCamp/${params.id}`
             );
             const data = await response.json();
             return data;
@@ -122,8 +124,8 @@ const MainRouter = createBrowserRouter([
 
       //User Route
       {
-        // path: "userHome",
-        index: true,
+        path: "userHome",
+        // index: true,
         element: (
           <PrivateRoute>
             <UserHome></UserHome>,
@@ -159,7 +161,8 @@ const MainRouter = createBrowserRouter([
         ),
         loader: async ({ params }) => {
           const Data = await fetch(
-            `http://localhost:5000/api/myAddPet/${params.id}`
+            `https://petadopy-backend.vercel.app/api/myAddPet/${params.id}`
+            // `http://localhost:5000/api/myAddPet/${params.id}`
           );
           return Data;
         },
@@ -190,7 +193,8 @@ const MainRouter = createBrowserRouter([
         loader: async ({ params }) => {
           try {
             const response = await fetch(
-              `http://localhost:5000/api/allDonationCamp/${params.id}`
+              `https://petadopy-backend.vercel.app/api/allDonationCamp/${params.id}`
+              // `http://localhost:5000/api/allDonationCamp/${params.id}`
             );
             const data = await response.json();
             return data;

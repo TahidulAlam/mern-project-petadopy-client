@@ -6,6 +6,7 @@ import useAxiosPrivate from "../../../../hooks/useAxiosPrivate";
 import useAuth from "../../../../hooks/useAuth";
 import { useFormik } from "formik";
 import moment from "moment";
+import Swal from "sweetalert2";
 
 const UpdateDonationForm = ({ defaultData }) => {
   const axiosPublic = useAxiosPublic();
@@ -63,7 +64,15 @@ const UpdateDonationForm = ({ defaultData }) => {
         `/api/allDonationCamp/${defaultData._id}`,
         values
       );
-      console.log(Res);
+      if (Res.data.modifiedCount) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: `Details updated.`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
     },
   });
   console.log(defaultData);
