@@ -46,8 +46,8 @@ const MyAddPet = () => {
   const limit = 9;
 
   const finalData = async () => {
-    const url = `/api/myAddPet/?email=${user?.email}&page=${page}&limit=${limit}`;
-    const res = await axioPrivate.get(url);
+    // const url = `/api/myAddPet/${user?.email}`;
+    const res = await axioPrivate.get();
     return res.data.result;
   };
 
@@ -77,7 +77,7 @@ const MyAddPet = () => {
     }
   };
   const totalPage = Math.ceil((myAddPetdata?.length || 0) / limit);
-  console.log(totalPage);
+  // console.log(totalPage);
   if (isError) {
     return <p>Something went wrong {error}</p>;
   }
@@ -108,7 +108,7 @@ const MyAddPet = () => {
   };
   return (
     <div>
-      <DashBoardHeader content={<h1>My Add Pet</h1>} />
+      {/* <DashBoardHeader content={<h1>My Add Pet</h1>} /> */}
       <Container>
         <div className="max-w-5xl mx-auto">
           <section className="antialiased text-gray-600">

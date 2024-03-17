@@ -4,6 +4,9 @@ import React, { useEffect, useState, useRef } from "react";
 import Container from "../../components/shared/Container";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import DonationCard from "./DonationCard";
+import { useQuery, useInfiniteQuery } from "@tanstack/react-query";
+// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { useInView } from "react-intersection-observer";
 const Donation = () => {
   const axios = useAxiosPublic();
   const [donation, setDonation] = useState([]);
@@ -11,50 +14,59 @@ const Donation = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const lastItemRef = useRef();
-
-  const getData = async () => {
-    try {
-      const url = `/api/allDonationCamp?page=${page}`;
-      const res = await axios.get(url);
-      setDonation((prevDonation) => [...prevDonation, ...res.data.result]);
-      setTotalPages(res.data.totalPages);
-    } catch (error) {
-      console.error(error);
-    }
-    // console.log(getData);
-  };
-  const handleInfiniteScroll = () => {
-    if (
-      !loading &&
-      page < totalPages &&
-      window.innerHeight + window.scrollY >= document.body.offsetHeight - 100
-    ) {
-      setPage(page + 1);
-    }
-  };
+  const { ref, inView } = useInView();
+  const {
+    data: donationData = [],
+    refetch,
+    status,
+    data,
+    error,
+    isFetching,
+    isFetchingNextPage,
+    isFetchingPreviousPage,
+    fetchNextPage,
+    fetchPreviousPage,
+    hasNextPage,
+    hasPreviousPage,
+  } = useQuery({
+    queryKey: ["donationData", page],
+    cacheTime: 0,
+    staleTime: Infinity,
+    queryFn: async ({ pageParam }) => {
+      const res = await axios.get(
+        `/api/allDonationCamp?page=${page}` + pageParam
+      );
+      return res.data.result;
+    },
+    initialPageParam: 0,
+    getPreviousPageParam: (firstPage) => firstPage.previousId ?? undefined,
+    getNextPageParam: (lastPage) => lastPage.nextId ?? undefined,
+  });
+  // console.log(donationData);
   useEffect(() => {
-    getData();
-  }, [page]);
-  useEffect(() => {
-    window.addEventListener("scroll", handleInfiniteScroll);
-    return () => {
-      window.removeEventListener("scroll", handleInfiniteScroll);
-    };
-  }, [handleInfiniteScroll]);
-  console.log("donate", donation);
+    if (inView) {
+      fetchNextPage();
+    }
+  }, [fetchNextPage, inView]);
   return (
     <div>
       <Container>
-        <div className="lg:mt-56 mt-32 -z-30">
-          <div className="grid lg:grid-cols-3 grid-col gap-5 w-5/6 mx-auto ">
-            {donation?.map((donation, index) => (
-              <DonationCard
-                key={donation._id}
-                data={donation}
-                ref={index === donation.length - 1 ? lastItemRef : null}
-              />
-            ))}
-          </div>
+        <div className="lg:mt-56 mt-32 -z-30 h-screen">
+          {status === "pending" ? (
+            <p>Loading...</p>
+          ) : status === "error" ? (
+            <span>Error: {error.message}</span>
+          ) : (
+            <div className="grid lg:grid-cols-3 grid-col gap-5 w-5/6 mx-auto ">
+              {donationData?.map((donation, index) => (
+                <DonationCard
+                  key={donation._id}
+                  data={donation}
+                  ref={index === donation.length - 1 ? lastItemRef : null}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </Container>
     </div>

@@ -6,14 +6,14 @@ const CategoryCard = ({ cardData }) => {
   return (
     <div>
       <div className="">
-        <div className="bg-white shadow-md rounded-lg max-w-sm ">
-          <div className="flex flex-col justify-center items-center">
+        <div className="shadow-md rounded-lg max-w-sm backdrop-blur-xl bg-white/30">
+          <div className="flex flex-col justify-center items-center cursor-pointer p-5 ">
             <img
-              className="rounded-t-lg w-44 mx-auto p-10 pb-3"
-              src={cardData?.image_draw}
+              className="rounded-t-lg lg:w-32 w-20 mx-auto p-2"
+              src={cardData?.image_fill}
               alt=""
             />
-            <h1 className="p-5 text-xl font-semibold">
+            <h1 className=" lg:text-2xl text-sm font-normal font-poppins text-white">
               {cardData?.category_name}
             </h1>
           </div>

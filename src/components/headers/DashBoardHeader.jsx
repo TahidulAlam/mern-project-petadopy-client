@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
-
-const DashBoardHeader = ({ content }) => {
+import MenuDrop from "./MenuDrop";
+const DashBoardHeader = () => {
   return (
     <div>
-      <div className="flex justify-center items-center font-bold lg:text-5xl text-xl lg:p-10 p-5 w-fill bg-slate-100 text-violet-900">
-        <h1>{content}</h1>
+      <div className="fixed w-full h-16 py-1 font-bold lg:text-5xl text-xl p-2 w-fill backdrop-blur-md bg-white/30 text-white">
+        <div className="flex w-[80%] justify-end">
+          <MenuDrop />
+        </div>
       </div>
     </div>
   );

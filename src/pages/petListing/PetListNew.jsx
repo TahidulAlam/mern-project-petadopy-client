@@ -4,39 +4,34 @@ import React, { useEffect, useState, useRef } from "react";
 import Container from "../../components/shared/Container";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import PetListingCard from "./PetListingCard";
+import { useQuery } from "@tanstack/react-query";
 
 const PetListNew = () => {
   const axios = useAxiosPublic();
-  const [pets, setPets] = useState([]);
-  const [search, setSearch] = useState("");
+  // const [pets, setPets] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("All");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const lastItemRef = useRef();
 
-  const getData = async () => {
-    try {
-      const url = `/api/petList?search=${search}&category=${category}&page=${page}`;
-      const res = await axios.get(url);
-      setPets((prevPets) => [...prevPets, ...res.data.pets]);
-      setTotalPages(res.data.totalPages);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setPage(1);
-    setPets([]);
-    getData();
-  };
+  const { data: petsData = [], refetch } = useQuery({
+    queryKey: ["petsData", page, searchTerm, category],
+    cacheTime: 0,
+    staleTime: Infinity,
+    queryFn: async () => {
+      const res = await axios.get(
+        `/api/petList?searchTerm=${searchTerm}&category=${category}&page=${page}`
+      );
+      return res.data.pets;
+    },
+  });
 
   const handleCategoryChange = (e) => {
     setPage(1);
-    setPets([]);
     setCategory(e.target.value);
+    refetch();
   };
 
   const handleInfiniteScroll = () => {
@@ -50,36 +45,29 @@ const PetListNew = () => {
   };
 
   useEffect(() => {
-    getData();
-  }, [page, search, category]);
-
-  useEffect(() => {
     window.addEventListener("scroll", handleInfiniteScroll);
     return () => {
       window.removeEventListener("scroll", handleInfiniteScroll);
     };
   }, [handleInfiniteScroll]);
-  console.log(pets);
+  // console.log(pets);
   return (
     <div>
       <Container>
-        <div className="fixed lg:top-28 top-5 left-0 right-0 z-10">
-          <div className="rounded-xl lg:mt-3 mt-4 lg:max-w-xl max-w-xs  mx-auto px-5 py-5 bg-[#6D28D9]">
+        <div className="fixed lg:top-16 top-8 left-0 right-0 z-40">
+          <div className="rounded-lg lg:mt-7 mt-4 lg:max-w-xl max-w-xs  mx-auto px-2 py-2 backdrop-blur-sm bg-white/50">
             <div className="relative">
-              <form
-                onSubmit={handleSubmit}
-                className="flex md:flex-row lg:gap-3 gap-1"
-              >
+              <div className="flex md:flex-row">
                 <div className="flex w-4/6">
                   <input
-                    name="search"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    className="lg:w-80 w-full px-1 lg:h-10 h-8 rounded-l border-2  focus:outline-none"
-                    type="search"
-                    placeholder="Search"
+                    name="searchTerm"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="lg:w-80 w-full px-1 lg:h-10 h-8 rounded-lg border-2  focus:outline-none"
+                    type="searchTerm"
+                    placeholder="searchTerm"
                   />
-                  <button
+                  {/* <button
                     type="button"
                     className=" bg-sky-500 text-white rounded-r px-2 md:px-1 py-0 md:py-1"
                   >
@@ -95,13 +83,13 @@ const PetListNew = () => {
                         d="M14.795 13.408l5.204 5.204a1 1 0 01-1.414 1.414l-5.204-5.204a7.5 7.5 0 111.414-1.414zM8.5 14A5.5 5.5 0 103 8.5 5.506 5.506 0 008.5 14z"
                       />
                     </svg>
-                  </button>
+                  </button> */}
                 </div>
                 <select
                   id="category"
                   name="category"
                   value={category}
-                  className="w-2/6 lg:h-10 h-8 border-2  focus:outline-none  text-sky-500 rounded px-2 md:px-1 py-0 md:py-1 tracking-wider"
+                  className="w-2/6 lg:h-10 h-8 border-2  focus:outline-none  selection:bg-black text-black rounded-lg  py-0 md:py-1 tracking-wider"
                   onChange={handleCategoryChange}
                 >
                   <option value="All" defaultValue="">
@@ -114,17 +102,17 @@ const PetListNew = () => {
                   <option value="Fish">Fish</option>
                   <option value="Rabbit">Rabbit</option>
                 </select>
-              </form>
+              </div>
             </div>
           </div>
         </div>
-        <div className="lg:mt-56 mt-32 -z-30">
-          <div className="grid lg:grid-cols-3 grid-col gap-5 w-5/6 mx-auto ">
-            {pets?.map((pet, index) => (
+        <div className="lg:mt-40 mt-28 -z-50 h-screen">
+          <div className="grid lg:grid-cols-5 grid-cols-2  gap-2 w-full mx-auto ">
+            {petsData?.map((pet, index) => (
               <PetListingCard
                 key={pet._id}
                 data={pet}
-                ref={index === pets.length - 1 ? lastItemRef : null}
+                // ref={index === pets.length - 1 ? lastItemRef : null}
               />
             ))}
           </div>

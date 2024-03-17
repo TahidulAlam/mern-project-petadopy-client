@@ -9,73 +9,53 @@ import useAuth from "../../../../hooks/useAuth";
 import moment from "moment";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { imageUpload } from "../../../../utils/imageUpload";
 
 const MyForm = () => {
   const axiosPublic = useAxiosPublic();
   const axiosPrivate = useAxiosPrivate();
   const { user } = useAuth();
   const email = user?.email;
-  const [image, setImage] = useState(null);
-  const [url, setUrl] = useState("");
-  const [imageLink, setImageLink] = useState("");
-  const handleImage = async (selectedFile) => {
-    setImage(selectedFile);
-
-    const data = new FormData();
-    data.append("file", selectedFile);
-    data.append("upload_preset", "myCloud");
-    // data.append("cloud_name", "dnan6s4xq");
-    const cloudnaru_url =
-      "https://api.cloudinary.com/v1_1/dnan6s4xq/image/upload";
-    try {
-      if (selectedFile === null) {
-        return alert("Please Upload an image");
-      }
-
-      const res = await fetch(cloudnaru_url, {
-        method: "POST",
-        body: data,
-      });
-
-      const cloudData = await res.json();
-      console.log(cloudData);
-      setUrl(cloudData.url);
-      const updatedImageLink = { ...imageLink, url: cloudData.url };
-      setImageLink(updatedImageLink);
-    } catch (error) {
-      console.error("Error uploading image:", error.message);
-    }
-  };
 
   const formik = useFormik({
     initialValues: {
       email: email || "not fined",
       name: "",
-      image: "",
-      image_url: imageLink,
+      images: [],
       age: "",
       category: "",
       location: "",
       shortDescription: "",
       longDescription: "",
-      file: null,
       adopted: false,
       dateField: moment().format("YYYY-MM-DD"),
     },
     onSubmit: async (values, actions) => {
       actions.setSubmitting(false);
-      // acknowledged
-      const res = await axiosPrivate.post("/api/petList", values);
-      console.log(res);
-      if (res.data.acknowledged) {
-        Swal.fire({
-          title: "Pet added!",
-          text: "Pet added Successfully.",
-          icon: "success",
-        });
+      try {
+        const uploadedImageUrls = await Promise.all(
+          values.images.map(async (image) => {
+            const img_url = await imageUpload(image);
+            return img_url?.data?.display_url;
+          })
+        );
+        values.image_urls = uploadedImageUrls;
+        const res = await axiosPrivate.post("/api/petList", values);
+        if (res.data.acknowledged) {
+          Swal.fire({
+            title: "Pet added!",
+            text: "Pet added Successfully.",
+            icon: "success",
+          });
+        }
+      } catch (error) {
+        console.error("Error uploading image:", error);
       }
     },
   });
+  const handleUploadImage = (event) => {
+    formik.setFieldValue("images", Array.from(event.target.files));
+  };
 
   const categoryOptions = [
     { value: "Fish", label: "Fish" },
@@ -94,33 +74,21 @@ const MyForm = () => {
   };
 
   return (
-    <div>
-      <div>
-        <label htmlFor="file">File:</label>
-        <input
-          type="file"
-          id="file"
-          name="file"
-          //   value={image}
-          onChange={(e) => handleImage(e.target.files[0])}
-          className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
-        />
-        {/* {formik.errors.file && <div>{formik.errors.file}</div>} */}
-      </div>
+    <div className="">
       <form onSubmit={formik.handleSubmit}>
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 p-4">
+        <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-2 gap-1 p-1 font-poppins lg:text-base text-sm">
           <div>
-            <label htmlFor="name">Image Link:</label>
+            <label htmlFor="name">Images:</label>
             <input
-              type="text"
               id="image"
               name="image"
-              onChange={formik.handleChange}
-              value={formik.values.image}
-              defaultValue={imageLink}
-              className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
+              type="file"
+              multiple
+              onChange={handleUploadImage}
+              className="bg-white border border-gray-200 rounded-lg py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
             />
-            {formik.errors.image && <div>{formik.errors.image}</div>}
+
+            {formik.errors.images && <div>{formik.errors.images}</div>}
           </div>
           <div>
             <label htmlFor="name">Name:</label>
@@ -130,21 +98,21 @@ const MyForm = () => {
               name="name"
               onChange={formik.handleChange}
               value={formik.values.name}
-              className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
+              className="bg-white border border-gray-200 rounded-lg py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
             />
             {formik.errors.name && <div>{formik.errors.name}</div>}
           </div>
           <div>
-            <label htmlFor="age">Age:</label>
+            <label htmlFor="breed">Breed:</label>
             <input
-              type="number"
-              id="age"
-              name="age"
+              type="breed"
+              id="breed"
+              name="breed"
               onChange={formik.handleChange}
-              value={formik.values.age}
-              className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
+              value={formik.values.breed}
+              className="bg-white border border-gray-200 rounded-lg py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
             />
-            {formik.errors.age && <div>{formik.errors.age}</div>}
+            {formik.errors.breed && <div>{formik.errors.breed}</div>}
           </div>
           <div>
             <label htmlFor="category">Category:</label>
@@ -161,19 +129,31 @@ const MyForm = () => {
             {formik.errors.category && <div>{formik.errors.category}</div>}
           </div>
           <div>
+            <label htmlFor="age">Age:</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              onChange={formik.handleChange}
+              value={formik.values.age}
+              className="bg-white border border-gray-200 rounded-lg py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
+            />
+            {formik.errors.age && <div>{formik.errors.age}</div>}
+          </div>
+          <div>
             <label htmlFor="location">Location:</label>
             <textarea
               type="text"
               id="location"
               name="location"
-              rows={2}
+              rows={1}
               onChange={formik.handleChange}
               value={formik.values.location}
-              className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
+              className="bg-white border border-gray-200 rounded-lg py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
             />
             {formik.errors.location && <div>{formik.errors.location}</div>}
           </div>
-          <div>
+          <div className="lg:col-span-2 col-span-1">
             <label htmlFor="shortDescription">Short Description:</label>
             <textarea
               id="shortDescription"
@@ -181,7 +161,7 @@ const MyForm = () => {
               rows={2}
               onChange={formik.handleChange}
               value={formik.values.shortDescription}
-              className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
+              className="bg-white border border-gray-200 rounded-lg py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
             />
             {formik.errors.shortDescription && (
               <div>{formik.errors.shortDescription}</div>
@@ -195,7 +175,7 @@ const MyForm = () => {
               rows={4}
               onChange={formik.handleChange}
               value={formik.values.longDescription}
-              className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
+              className="bg-white border border-gray-200 rounded-lg py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
             />
             {formik.errors.longDescription && (
               <div>{formik.errors.longDescription}</div>
@@ -204,7 +184,7 @@ const MyForm = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white p-2 rounded col-span-2"
+          className="bg-indigo-800 text-white p-2 px-10 rounded-lg w-full font-poppins text-center"
         >
           Submit
         </button>

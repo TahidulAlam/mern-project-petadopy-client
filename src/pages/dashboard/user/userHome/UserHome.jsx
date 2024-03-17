@@ -1,11 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import DashBoardHeader from "../../../../components/headers/DashBoardHeader";
+import logo from "../../../../assets/petadopy.png";
 
 const UserHome = () => {
   return (
     <div>
-      <DashBoardHeader content={<h1>User Dashboard</h1>}></DashBoardHeader>
+      {/* <DashBoardHeader></DashBoardHeader> */}
+      <div className="h-[500px] flex justify-center items-center">
+        <img src={logo} alt="" />
+      </div>
     </div>
   );
 };

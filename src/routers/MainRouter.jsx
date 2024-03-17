@@ -4,7 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../components/layouts/MainLayout";
 import Home from "../pages/home/Home";
 import Donation from "../pages/donation/Donation";
-import PetListing from "../pages/petListing/PetListing";
+// import PetListing from "../pages/petListing/PetListing";
 import Login from "../pages/login/Login";
 import Registration from "../pages/registration/Registration";
 import Dashboard from "../pages/dashboard/Dashboard";
@@ -14,7 +14,7 @@ import AllUsers from "../pages/dashboard/admin/allUsers/AllUsers";
 import PrivateRoute from "./PrivateRoute";
 import AddPet from "../pages/dashboard/user/addPet/AddPet";
 import AdoptionReq from "../pages/dashboard/user/adoptionReq/AdoptionReq";
-import MyAddPet from "../pages/dashboard/user/myAddPet/MyAddPet";
+// import MyAddPet from "../pages/dashboard/user/myAddPet/MyAddPet";
 // import MyDonation from "../pages/dashboard/user/myDonation/MyDonation";
 import MyDonationCamp from "../pages/dashboard/user/myDonationCamp/MyDonationCamp";
 import UserHome from "../pages/dashboard/user/userHome/UserHome";
@@ -27,6 +27,9 @@ import AllDonation from "../pages/dashboard/admin/allDonations/AllDonation";
 import ErrorPage from "../components/error/ErrorPage";
 import AdminRoute from "./AdminRoute";
 import MyDonation from "../pages/dashboard/user/myDonation/MyDonation";
+import VetDoctor from "../pages/vetDoctor/VetDoctor";
+import MyAddPetList from "../pages/dashboard/user/myAddPet/MyAddPetList";
+import MyAddPetUpdate from "../pages/dashboard/user/myAddPet/MyAddPetUpdate";
 
 const MainRouter = createBrowserRouter([
   {
@@ -51,12 +54,16 @@ const MainRouter = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://petadopy-backend.vercel.app/api/petList/${params.id}`),
-        // fetch(`http://localhost:5000/api/petList/${params.id}`),
+          // fetch(`https://petadopy-backend.vercel.app/api/petList/${params.id}`),
+          fetch(`http://localhost:5000/api/petList/${params.id}`),
       },
       {
         path: "/donation",
         element: <Donation></Donation>,
+      },
+      {
+        path: "/vetDoctor",
+        element: <VetDoctor />,
       },
       {
         path: "/donation/:id",
@@ -153,16 +160,16 @@ const MainRouter = createBrowserRouter([
         ),
       },
       {
-        path: "updatePet/:id",
+        path: "myAddPet/:id",
         element: (
           <PrivateRoute>
-            <UpdatePet></UpdatePet>,
+            <MyAddPetUpdate />
           </PrivateRoute>
         ),
         loader: async ({ params }) => {
           const Data = await fetch(
-            `https://petadopy-backend.vercel.app/api/myAddPet/${params.id}`
-            // `http://localhost:5000/api/myAddPet/${params.id}`
+            // `https://petadopy-backend.vercel.app/api/myAddPet/${params.id}`
+            `http://localhost:5000/api/petList/${params.id}`
           );
           return Data;
         },
@@ -179,10 +186,12 @@ const MainRouter = createBrowserRouter([
         path: "myAddPet",
         element: (
           <PrivateRoute>
-            <MyAddPet></MyAddPet>,
+            {/* <MyAddPet></MyAddPet>, */}
+            <MyAddPetList />
           </PrivateRoute>
         ),
       },
+
       {
         path: "updateDonation/:id",
         element: (

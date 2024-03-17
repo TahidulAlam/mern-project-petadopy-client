@@ -112,7 +112,7 @@ const AllDonation = () => {
   return (
     <div>
       <Container>
-        <DashBoardHeader content={<h1> All Donation campaign</h1>} />
+        {/* <DashBoardHeader content={<h1> All Donation campaign</h1>} /> */}
         <div className="max-w-5xl mx-auto">
           <section className="antialiased text-gray-600">
             <div className="flex flex-col justify-center lg:mt-10 p-10">

@@ -8,22 +8,28 @@ const Menu = () => {
   const { user } = useAuth();
   return (
     <div>
-      <div className="px-2 lg:px-2 md:px-0 py-6 space-y-2 md:space-y-0 md:space-x-2 lg:text-xl text-base font-medium text-white w-[98%] lg:w-[100%] flex justify-between items-center">
+      <div className="py-3 px-2 lg:px-2 md:px-0 md:space-y-0 md:space-x-2 lg:text-lg text-base font-normal text-white w-[100%] flex justify-between items-center">
         <NavLink
           to={"/"}
-          className="px-3 py-2 rounded-md text-white focus:outline-none focus:text-white focus:bg-gray-700 whitespace-nowrap"
+          className="z-50 px-3 py-1 rounded-md whitespace-nowrap"
         >
           Home
         </NavLink>
         <NavLink
           to={"/petlisting"}
-          className="px-3 py-2 rounded-md text-white focus:outline-none focus:text-white focus:bg-gray-700 whitespace-nowrap"
+          className="z-50 px-3 py-1 rounded-md whitespace-nowrap"
         >
-          Pet listing
+          Pet list
+        </NavLink>
+        <NavLink
+          to={"/vetDoctor"}
+          className="z-50 px-3 py-1 rounded-md whitespace-nowrap"
+        >
+          Vet Doctor
         </NavLink>
         <NavLink
           to={"/donation"}
-          className="px-3 py-2 rounded-md text-white focus:outline-none focus:text-white focus:bg-gray-700 whitespace-nowrap"
+          className="z-50 px-3 py-1 rounded-md whitespace-nowrap"
         >
           Donation
         </NavLink>
@@ -32,7 +38,7 @@ const Menu = () => {
         ) : (
           <NavLink
             to={"/login"}
-            className="px-3 py-2 rounded-md text-white focus:outline-none focus:text-white focus:bg-gray-700 whitespace-nowrap"
+            className="px-3 py-1 rounded-md whitespace-nowrap"
           >
             Log In
           </NavLink>

@@ -15,7 +15,7 @@ const UpdateDonation = () => {
   console.log(data);
   return (
     <div>
-      <DashBoardHeader content={<h1>Update your Campaign</h1>} />
+      {/* <DashBoardHeader content={<h1>Update your Campaign</h1>} /> */}
       <Container>
         <div className="max-w-2xl mx-auto">
           <UpdateDonationForm defaultData={data} />

@@ -6,8 +6,8 @@ import animationData from "../../assets/RRSWboGarO.json";
 const PatAnime = () => {
   const isSmallScreen = window.innerWidth <= 768; // Adjust the breakpoint as needed
   const animationStyle = {
-    width: isSmallScreen ? "100px" : "150px",
-    height: isSmallScreen ? "100px" : "150px",
+    width: isSmallScreen ? "80px" : "120px",
+    height: isSmallScreen ? "80px" : "120px",
   };
 
   return (

@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.active{
+  @apply bg-indigo-200   text-indigo-950  rounded-lg;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -16,6 +18,6 @@
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(98, 0, 255);
+    background: black;
     border-radius: 10px;
   }

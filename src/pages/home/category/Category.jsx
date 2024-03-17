@@ -12,7 +12,7 @@ const Category = () => {
   // console.log(data);
   return (
     <div>
-      <div className="grid lg:grid-cols-3 grid-cols-2 gap-5 mt-5">
+      <div className="grid lg:grid-cols-3 grid-cols-3 lg:gap-10 gap-2 mt-2 lg:mt-5 cursor-pointer">
         {data?.map((dd) => (
           <CategoryCard key={dd._id} cardData={dd}></CategoryCard>
         ))}

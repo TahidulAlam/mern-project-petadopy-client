@@ -1,0 +1,14 @@
+
+.slider {
+    border-radius: 20px;
+    width: 552px; /* Default width */
+    height: 600px; /* Default height */
+  }
+  
+  @media screen and (max-width: 767px) {
+    .slider {
+      width: 100%; /* Set to full width on smaller screens */
+      height: auto; /* Allow height to adjust based on image aspect ratio */
+    }
+  }
+  

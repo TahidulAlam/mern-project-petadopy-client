@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Parallax, Background } from "react-parallax";
-import bgImg from "../../../assets/banner4.png";
+import bgImg from "../../../assets/bgimg111.webp";
 import logoB from "../../../assets/petadopyWhite.png";
 const CalltoAction = () => {
   return (
@@ -12,18 +12,17 @@ const CalltoAction = () => {
         bgImage={bgImg}
         strength={200}
       >
-        <div className="h-[400px] w-full">
-          <div className="absolute hero-overlay   top-16 left-16 flex flex-col items-start justify-start">
-            {/* <div className="text-5xl text-white uppercase text-center">
-              <h1>Title</h1>
-            </div> */}
-            <img className="w-72" src={logoB} alt="" />
-            <h1 className="py-5 text-white text-start">
-              Where Every Pawprint Tells <br /> a Tale of Hope and Home.
-            </h1>
-            <button className="bg-indigo-600 p-2 px-9 rounded-md text-white">
-              Donate
-            </button>
+        <div className="lg:h-[400px] h-[200px] w-full ">
+          <div className="relative hero-overlay lg:top-16 top-6 flex flex-col items-center justify-center">
+            <div className=" backdrop-blur-xl bg-white/30 flex flex-col justify-center items-center lg:p-5 px-5 py-2 rounded-lg">
+              <img className="lg:w-96 w-24" src={logoB} alt="" />
+              <h1 className="lg:py-5 py-2 text-black text-center lg:text-base text-sm">
+                Where Every Pawprint Tells <br /> a Tale of Hope and Home.
+              </h1>
+              <button className="bg-white rounded-lg p-2 lg:px-9 px-3 text-black z-50 lg:text-base text-sm">
+                Donate
+              </button>
+            </div>
           </div>
         </div>
       </Parallax>

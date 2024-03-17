@@ -26,7 +26,7 @@ const MyDonation = () => {
     queryKey: ["myDonatorsData"],
     queryFn: finalData,
   });
-  console.log(myDonationData);
+  // console.log(myDonationData);
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -59,7 +59,7 @@ const MyDonation = () => {
   };
   return (
     <div>
-      <DashBoardHeader content={<h1>My Donation</h1>}></DashBoardHeader>
+      {/* <DashBoardHeader content={<h1>My Donation</h1>}></DashBoardHeader> */}
       <Container>
         <section className="antialiased border-none  text-gray-600 px-4">
           <div className="flex flex-col justify-center h-full">

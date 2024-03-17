@@ -6,10 +6,10 @@ import DashBoardHeader from "../../../../components/headers/DashBoardHeader";
 const AddPet = () => {
   return (
     <div>
-      <DashBoardHeader content={<h1>Add Pet</h1>} />
+      {/* <DashBoardHeader content={<h1>Add Pet</h1>} /> */}
       <Container>
-        <div className="bg-slate-50 max-w-4xl mx-auto mt-10 rounded-xl">
-          <div className="lg:max-w-4xl mx-auto p-10">
+        <div className="bg-slate-100 max-w-4xl mx-auto lg:mt-12 mt-5  rounded-xl">
+          <div className="lg:max-w-4xl mx-auto lg:p-10 p-3">
             <MyForm />
           </div>
         </div>

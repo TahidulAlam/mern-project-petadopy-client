@@ -8,31 +8,31 @@ const DonationCard = ({ data }) => {
   return (
     <div>
       <div className="max-w-2xl mx-auto">
-        <div className="bg-white shadow-md border-gray-200 rounded-lg max-w-sm ">
+        <div className="backdrop-blur-xl bg-white/30  shadow-md border-gray-200 rounded-lg max-w-sm ">
           <img
             className="rounded-t-lg w-2/4 mx-auto"
             src={data?.image}
             alt=""
           />
           <div className="p-5">
-            <h5 className="text-gray-900 font-bold text-2xl tracking-tight mb-2 ">
+            <h5 className="text-white font-bold text-2xl tracking-tight mb-2 ">
               Name : {data?.name}
             </h5>
-            <p className="font-normal text-gray-700 mb-3 dark:text-gray-400">
+            <p className="font-normal text-white mb-3">
               Donation Amount : {data?.amount}
             </p>
-            <p className="font-normal text-gray-700 mb-3 dark:text-gray-400">
+            <p className="font-normal text-white mb-3">
               Maximum Donation Amount : 100$
             </p>
-            <p className="font-normal text-gray-700 mb-3 dark:text-gray-400">
+            <p className="font-normal text-white mb-3">
               Last Date: {data?.last_date}
             </p>
-            <p className="font-normal text-gray-700 mb-3 dark:text-gray-400">
+            <p className="font-normal text-white mb-3">
               Location : {data?.location}
             </p>
             <Link
               to={`/donation/${data._id}`}
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-black bg-white focus:ring-4 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center "
             >
               Campaign details
               <svg

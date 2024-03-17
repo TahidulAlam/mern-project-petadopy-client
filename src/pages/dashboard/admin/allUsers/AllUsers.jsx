@@ -16,7 +16,7 @@ const AllUsers = () => {
       return res.data;
     },
   });
-  console.log(usersData);
+  // console.log(usersData);
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
