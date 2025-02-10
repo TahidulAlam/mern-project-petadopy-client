@@ -75,8 +75,8 @@ const MainRouter = createBrowserRouter([
         loader: async ({ params }) => {
           try {
             const response = await fetch(
-              `https://petadopy-backend.vercel.app/api/allDonationCamp/${params.id}`
-              // `http://localhost:5000/api/allDonationCamp/${params.id}`
+              // `https://petadopy-backend.vercel.app/api/allDonationCamp/${params.id}`
+              `http://localhost:5000/api/allDonationCamp/${params.id}`
             );
             const data = await response.json();
             return data;
@@ -202,8 +202,8 @@ const MainRouter = createBrowserRouter([
         loader: async ({ params }) => {
           try {
             const response = await fetch(
-              `https://petadopy-backend.vercel.app/api/allDonationCamp/${params.id}`
-              // `http://localhost:5000/api/allDonationCamp/${params.id}`
+              // `https://petadopy-backend.vercel.app/api/allDonationCamp/${params.id}`
+              `http://localhost:5000/api/allDonationCamp/${params.id}`
             );
             const data = await response.json();
             return data;

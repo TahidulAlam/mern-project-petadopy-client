@@ -16,7 +16,7 @@ const PetDetails = () => {
   const { category, image, location, name, email } = data || {};
   const { user } = useAuth();
   const axiosPrivate = useAxiosPrivate();
-  console.log(data);
+  // console.log(data);
   function closeModal() {
     setIsOpen(false);
   }
@@ -64,12 +64,12 @@ const PetDetails = () => {
   return (
     <div>
       <Container>
-        <div className="backdrop-blur-xl bg-white/30 text-gray-700 lg:mt-32 mt-20 p-10 rounded-lg">
+        <div className="bg-gray-500  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 text-gray-700 lg:mt-32 mt-20 p-10 rounded-lg">
           <div className="container grid grid-cols-12 mx-auto">
             <div className="flex flex-col justify-center col-span-12 align-middle bg-no-repeat bg-cover  lg:col-span-6 lg:h-screen">
               {data?.image_url ? (
                 <img
-                  className="lg:w-[95%] object-cover w-32 mx-auto rounded-lg lg:h-[600px]"
+                  className="lg:w-[95%] object-cover w-32 mx-auto rounded-lg lg:h-[400px]"
                   src={data.image_url}
                   alt=""
                 />

@@ -34,7 +34,7 @@ const Review = () => {
       <section className="flex items-center font-poppins">
         <div className="justify-center flex-1 max-w-7xl px-4 py-6 mx-auto lg:py-4 md:px-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 p-2 ">
-            <div className="p-6 mb-6 backdrop-blur-xl bg-white/30 h-full rounded-lg">
+            <div className="p-6 mb-6 h-full w-full bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
               <h2 className="mb-6 text-xl font-semibold text-left text-white ">
                 Leave a comment
               </h2>
@@ -49,7 +49,7 @@ const Review = () => {
                     placeholder="your email"
                     required=""
                     name="reply_to"
-                    className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 backdrop-blur-xl bg-white/30 border rounded   "
+                    className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 h-full bg-gray-500  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 rounded   "
                     {...register("reply_to", {
                       required: "Email is required",
                       pattern: {
@@ -68,7 +68,7 @@ const Review = () => {
                     name="message"
                     placeholder="write a comment"
                     required=""
-                    className="block w-full px-4 leading-tight text-gray-700 backdrop-blur-xl bg-white/30 border rounded  py-7  "
+                    className="block w-full px-4 leading-tight text-gray-700 h-full bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20   py-7  "
                     {...register("message", {
                       required: "Message is required",
                       minLength: {
@@ -98,15 +98,15 @@ const Review = () => {
             <div className="rounded-lg">
               {/* <img src={img} alt="" className="h-full rounded-lg" /> */}
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="grid gap-4">
-                  <div>
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
+                <div className="grid grid-cols-2 gap-4">
+                  {/* <div>
                     <img
                       className="h-auto max-w-full rounded-lg"
                       src="https://i.ibb.co/F49tX1r/cute-kitten.jpg"
                       alt=""
                     />
-                  </div>
+                  </div> */}
                   <div>
                     <img
                       className="h-auto max-w-full rounded-lg"
@@ -122,7 +122,7 @@ const Review = () => {
                     />
                   </div>
                 </div>
-                <div className="grid gap-4">
+                {/* <div className="grid gap-4">
                   <div>
                     <img
                       className="h-auto max-w-full rounded-lg"
@@ -190,7 +190,7 @@ const Review = () => {
                       alt=""
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

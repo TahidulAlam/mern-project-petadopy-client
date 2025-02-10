@@ -25,15 +25,15 @@ const Home = () => {
       <Container>
         <div className="mt-5 rounded-lg flex flex-col w-[100%]  lg:p-10 p-2">
           <Category />
-          <div className="flex justify-center items-center lg:m-10 m-2">
-            <button className="backdrop-blur-xl bg-white/60 text-center lg:w-40 p-2 text-white rounded-md hover:bg-slate-50 font-poppins text-base shadow-md">
+          {/* <div className="flex justify-center items-center lg:m-10 m-2">
+            <button className=" text-center lg:w-40 p-2 text-black rounded-md bg-white font-poppins text-base">
               See All
             </button>
-          </div>
+          </div> */}
         </div>
       </Container>
       <Container>
-        <div className="lg:mt-20 md:mt-10 mt-5 rounded-lg   relative backdrop-blur-xl bg-white/30">
+        <div className="lg:mt-20 md:mt-10 mt-5 h-full w-full bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
           <CalltoAction />
         </div>
       </Container>

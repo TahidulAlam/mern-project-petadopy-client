@@ -17,34 +17,22 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { Link } from "react-router-dom";
-import DashBoardHeader from "../../../../components/headers/DashBoardHeader";
-
-// const columns = [
-//   columnHelper.accessor("serial", {
-//     header: "Serial",
-//   }),
-//   columnHelper.accessor("name", {
-//     header: "Pet Name",
-//   }),
-//   columnHelper.accessor("category", {
-//     header: "Pet Category",
-//   }),
-//   columnHelper.accessor("adopted_status", {
-//     header: "Adoption Status",
-//   }),
-//   columnHelper.accessor("update", {
-//     header: "Update",
-//   }),
-//   columnHelper.accessor("delete", {
-//     header: "Delete",
-//   }),
-// ];
 
 const AllPets = () => {
   const axiosPrivate = useAxiosPrivate();
   const columnHelper = createColumnHelper();
-  const [page, setPage] = useState(1);
+  const axios = useAxiosPublic();
+  const {
+    data: AllpetsData = [],
+    refetch,
+    isError,
+  } = useQuery({
+    queryKey: [],
+    queryFn: async () => {
+      const res = await axios.get(`/api/allPets`);
+      return res.data;
+    },
+  });
   const columns = [
     columnHelper.accessor("serial", {
       id: "S.No",
@@ -86,78 +74,46 @@ const AllPets = () => {
       header: "description",
     }),
   ];
-  const getData = async () => {
-    const url = `/api/allPets`;
-    const res = await axiosPrivate.get(url);
-    return res.data;
-  };
-
-  const {
-    data: AllpetsData,
-    isLoading,
-    isError,
-    refetch,
-    error,
-  } = useQuery({
-    queryKey: ["AllpetsData"],
-    queryFn: getData,
-  });
   console.log(AllpetsData);
   const table = useReactTable({
     data: AllpetsData,
     columns,
     getRowId: (row) => row.id,
-    // state: { globalFilter },
     getFilteredRowModel: getFilteredRowModel(),
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
-  // const limit = 9;
 
-  // const handlePrevious = () => {
-  //   if (page > 1) {
-  //     setPage(page - 1);
-  //   }
-  // };
-  // const handleNext = () => {
-  //   if (page < totalPage) {
-  //     setPage(page + 1);
-  //   }
-  // };
-  // const totalPage = Math.ceil((AllpetsData?.length || 0) / limit);
-  // if (isError) {
-  //   return <p>Something went wrong {error}</p>;
-  // }
-  // const handleDelete = (id) => {
-  //   Swal.fire({
-  //     title: "Are you sure?",
-  //     text: "You won't be able to revert this!",
-  //     icon: "warning",
-  //     showCancelButton: true,
-  //     confirmButtonColor: "#3085d6",
-  //     cancelButtonColor: "#d33",
-  //     confirmButtonText: "Yes, delete it!", // Corrected parameter name
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       axiosPrivate.delete(`/api/allPets/${id}`).then((res) => {
-  //         if (res.data.deletedCount > 0) {
-  //           refetch();
-  //           Swal.fire({
-  //             title: "Deleted!",
-  //             text: "Your file has been deleted.",
-  //             icon: "success",
-  //           });
-  //         }
-  //       });
-  //     } else if (result.dismiss === "cancel") {
-  //       Swal.fire({
-  //         title: "Cancelled",
-  //         text: "Your donation camp is safe!",
-  //         icon: "info",
-  //       });
-  //     }
-  //   });
-  // };
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!", // Corrected parameter name
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosPrivate.delete(`/api/allPets/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+          }
+        });
+      } else if (result.dismiss === "cancel") {
+        Swal.fire({
+          title: "Cancelled",
+          text: "Your donation camp is safe!",
+          icon: "info",
+        });
+      }
+    });
+  };
 
   return (
     <div>
@@ -306,7 +262,7 @@ const AllPets = () => {
               </tbody>
             </table>
           </div>
-          {/* <div className="flex items-center justify-end mt-2 gap-2">
+          <div className="flex items-center justify-end mt-2 gap-2">
             <button
               onClick={() => table.previousPage()}
               disabled={!table.getCanPreviousPage()}
@@ -354,7 +310,7 @@ const AllPets = () => {
                 </option>
               ))}
             </select>
-          </div> */}
+          </div>
         </div>
       </Container>
     </div>

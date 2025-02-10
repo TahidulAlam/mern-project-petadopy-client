@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <section className="flex flex-col mt-20 lg:justify-end font-poppins">
-        <div className="w-full backdrop-blur-xl bg-white/30 pt-11 ">
+        <div className="w-full bg-gray-500  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 text-gray-700 pt-10 ">
           <div className="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-0">
             <div className="flex items-center justify-center pb-3 border-b border-gray-300  lg:justify-between">
               {/* <div className="hidden mr-12 lg:block">
@@ -113,7 +113,7 @@ const Footer = () => {
                   <div className="w-full py-1 lg:w-auto lg:py-0">
                     <Link
                       to={"/"}
-                      className="inline-block w-full px-5 py-4 font-medium leading-4 text-center backdrop-blur-xl bg-white/50
+                      className="inline-block w-full px-5 py-4 font-medium leading-4 text-center bg-white
                       text-black rounded-md placeholder:text-black "
                     >
                       Subscribe

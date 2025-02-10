@@ -133,7 +133,7 @@ const ReviewSlider = () => {
           >
             {array.map((each, idx) => (
               <div key={idx} className="p-4 min-w-full md:min-w-[50%] ">
-                <div className="h-full p-8 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.1)] backdrop-blur-xl bg-white/30">
+                <div className="h-full p-5 bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"

@@ -11,7 +11,7 @@ const Banner = () => {
         className="relative rounded-[36px] "
         style={{
           background:
-            "linear-gradient(90deg, hsla(328, 75%, 45%, 0.2) 0%, hsla(269, 85%, 41%, 0.2) 100%)",
+            "linear-gradient(90deg, hsla(328, 75%, 45%, 0.1) 0%, hsla(269, 85%, 41%, 0.2) 100%)",
           backgroundSize: "cover",
         }}
       >

@@ -12,13 +12,14 @@ const MainLayout = () => {
     <div
       className="font-poppins -mt-28 gradient-background"
       style={{
-        backgroundImage: `url(${bgImg})`,
-        backgroundColor: "#0e003f",
-        // background:
-        //   "linear-gradient(90deg, hsla(328, 75%, 45%, 1) 0%, hsla(269, 85%, 41%, 1) 100%)",
-        // backgroundSize: "cover",
+        // backgroundImage: `url(${bgImg})`,
+        // backgroundColor: "#0e003f",
+        // backgroundColor: "#00008B",
+        background:
+          "linear-gradient(90deg, hsla(328, 75%, 45%, 1) 0%, hsla(269, 85%, 41%, 1) 100%)",
+
         // backgroundSize: "contain",
-        // width: "100%",
+        width: "100%",
         backgroundPosition: "center",
         position: "relative",
         height: "100%",

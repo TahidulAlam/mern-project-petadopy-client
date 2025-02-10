@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .active{
-  @apply bg-indigo-200   text-indigo-950  rounded-lg;
+  @apply bg-white   text-indigo-950  rounded-lg;
 }
 /* width */
 ::-webkit-scrollbar {

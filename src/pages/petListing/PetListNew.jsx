@@ -16,7 +16,11 @@ const PetListNew = () => {
   const [loading, setLoading] = useState(false);
   const lastItemRef = useRef();
 
-  const { data: petsData = [], refetch } = useQuery({
+  const {
+    data: petsData = [],
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["petsData", page, searchTerm, category],
     cacheTime: 0,
     staleTime: Infinity,
@@ -51,11 +55,18 @@ const PetListNew = () => {
     };
   }, [handleInfiniteScroll]);
   // console.log(pets);
+  if (isLoading) {
+    return (
+      <div className="h-screen justify-center flex items-center">
+        <div className="w-10 h-10 animate-[spin_2s_linear_infinite] rounded-full border-4 border-dashed border-sky-100"></div>
+      </div>
+    );
+  }
   return (
     <div>
       <Container>
         <div className="fixed lg:top-16 top-8 left-0 right-0 z-40">
-          <div className="rounded-lg lg:mt-7 mt-4 lg:max-w-xl max-w-xs  mx-auto px-2 py-2 backdrop-blur-sm bg-white/50">
+          <div className="lg:mt-7 mt-4 lg:max-w-xl max-w-xs  mx-auto px-2 py-2 bg-gray-500 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
             <div className="relative">
               <div className="flex md:flex-row">
                 <div className="flex w-4/6">
@@ -67,23 +78,6 @@ const PetListNew = () => {
                     type="searchTerm"
                     placeholder="searchTerm"
                   />
-                  {/* <button
-                    type="button"
-                    className=" bg-sky-500 text-white rounded-r px-2 md:px-1 py-0 md:py-1"
-                  >
-                    <svg
-                      className="h-5 w-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M14.795 13.408l5.204 5.204a1 1 0 01-1.414 1.414l-5.204-5.204a7.5 7.5 0 111.414-1.414zM8.5 14A5.5 5.5 0 103 8.5 5.506 5.506 0 008.5 14z"
-                      />
-                    </svg>
-                  </button> */}
                 </div>
                 <select
                   id="category"
@@ -118,7 +112,7 @@ const PetListNew = () => {
           </div>
         </div>
       </Container>
-      {loading && <p>Loading...</p>}
+      {/* {loading && <p>Loading...</p>} */}
     </div>
   );
 };
